@@ -16,32 +16,55 @@
 				var canvas = document.getElementById('myCanvas'); //Go forth and fetch a canvas
 				var ctx = canvas.getContext('2d'); //Get our 2D drawing context
 				ctx.fillCanvas();
+				radius = 35;
+				x = 35;
+				y = 35;
 				
-
-						// Pink and cyan rectangles 
-						for (var counter=0; counter<10; counter++) {
-
-
-
-								if ( (counter % 2) == 0) {
-										ctx.fillStyle = "pink";
-								} else {
-										ctx.fillStyle = "cyan"; 
-								}
-
-
-
-								 x = 250 + counter * 20;
-								 y = 250 + counter * 20;
-								 width = counter * 10;
-								 height = counter * 10;
-								 ctx.beginPath(); 
-								 ctx.rect(x, y, width, height); 
-								 ctx.fill(); 
-						}
-
+				for (var i=1;i<10;i++){
 				
+				ctx.beginPath();
+				ctx.circle(x,y,radius);
+				ctx.fillStyle= "blue";
+				ctx.fill();
 				
+				x = 35 + i * 70;
+				}
+				
+				//changing the i<n between 9-11 changes the green circles as
+				//well, but why? For the following for loop.
+				
+				for (var i=0;i<10;i++){
+				x=35;
+				
+				ctx.beginPath();
+				ctx.circle(x,y,radius);
+				ctx.fillStyle="red";
+				ctx.fill();
+				
+				y = 35 + i * 70
+				}
+				
+				for (var i=1;i<10;i++){
+				x=595;
+				
+				ctx.beginPath();
+				ctx.circle(x,y,radius);
+				ctx.fillStyle="green";
+				ctx.fill();
+				
+				y = 35 + i * 70;
+				}
+				
+				for (var i=1;i<10;i++){
+				y = 595;
+				
+				ctx.beginPath();
+				ctx.circle(x,y,radius);
+				ctx.fillStyle="yellow";
+				ctx.fill();
+				
+				x = 35 + i * 70;
+				}
 				
 				
 				//Uncomment this line if you want to add the mask for the OME image

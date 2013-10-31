@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h2>A little JavaScript art by Ryan Kim. </h2>
+    <em>Synopsis: Cicles changing colors, through computer</em>
+    <br>
+    <center>
+      <canvas id="myCanvas" width="640" height="640" style="border:solid"></canvas>
+      <!-- Load some helper functions -->
+      <script type='text/javascript' src='jsgraphics.js'></script>
+      <!-- Load the drawing code -->
+      <script type='text/javascript'>
+				var canvas = document.getElementById('myCanvas'); //Go forth and fetch a canvas
+				var ctx = canvas.getContext('2d'); //Get our 2D drawing context
+				ctx.fillCanvas();
+				
+
+						// Pink and cyan rectangles 
+						for (var counter=0; counter<10; counter++) {
+
+
+
+								if ( (counter % 2) == 0) {
+										ctx.fillStyle = "pink";
+								} else {
+										ctx.fillStyle = "cyan"; 
+								}
+
+
+
+								 x = 250 + counter * 20;
+								 y = 250 + counter * 20;
+								 width = counter * 10;
+								 height = counter * 10;
+								 ctx.beginPath(); 
+								 ctx.rect(x, y, width, height); 
+								 ctx.fill(); 
+						}
+
+				
+				
+				
+				
+				//Uncomment this line if you want to add the mask for the OME image
+				//ctx.clipEllipse();
+      </script>
+      <br>This will open your image in the browser - you have to 'Right Click' -&gt; 'Save Image As' to get your image
+      <br><button onclick="downloadImg();">Download Image</button>
+    </center>
+  </body>
+</html>
